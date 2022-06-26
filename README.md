@@ -7,7 +7,7 @@ Numeric pagination suitable for multiple cases, such as, custom paged table.
 You should ensure that you add the router as a dependency in your flutter project.
 ```yaml
 dependencies:
- pagination: ^0.0.2
+ pager: ^0.0.2
 ```
 
 ## Example Project
