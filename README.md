@@ -1,4 +1,4 @@
-# Pagination
+# Pager
 
 Numeric pagination suitable for multiple cases, such as, custom paged table.
 
