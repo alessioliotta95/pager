@@ -2,6 +2,6 @@
 
 * Initial release.
 
-## 0.1.0
+## 0.0.2
 
 * Readme updated. Example added. Package renamed. Customizations added.
