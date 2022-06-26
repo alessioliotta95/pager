@@ -1,39 +1,43 @@
-# Pagination
-
-Numeric pagination suitable for multiple cases, such as, custom paged table.
-
-## Getting started
-
-You should ensure that you add the router as a dependency in your flutter project.
-```yaml
-dependencies:
- pagination: ^0.0.2
-```
-
-## Example Project
-
-There is a example project in the `example` folder. Check it out. Otherwise, keep reading to get up and running.
-
-## Usage
-
-Need to include the import the package to the dart file where it will be used, use the below command,
-
-```dart
+import 'package:flutter/material.dart';
 import 'package:pagination/pagination.dart';
-```
-**Pagination**
 
-Basic Widget
-```dart
-new Pagination(
-                pagesView: 3,
-                totalPages: 5,
-                onPageChanged: (page) {},
-              ),
-```
+void main() {
+  runApp(const MyApp());
+}
 
-Complete example
-```dart
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Pagination Example',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  late int _currentPage;
+
+  @override
+  void initState() {
+    super.initState();
+    _currentPage = 1;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,8 +73,3 @@ Complete example
     );
   }
 }
-```
-<p align="center">
-  <img src="https://giphy.com/gifs/r8zXyoxgJVgEQpGYLe">
-</p>
-

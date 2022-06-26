@@ -9,13 +9,13 @@ class Pagination extends StatefulWidget {
     required this.totalPages,
     required this.onPageChanged,
     this.pagesView = 3,
-    this.currentPage = 0,
+    this.currentPage = 1,
     this.numberButtonSelectedColor = Colors.blue,
     this.numberTextSelectedColor = Colors.white,
     this.numberTextUnselectedColor = Colors.black,
     this.pageChangeIconColor = Colors.grey,
-  })  : assert(currentPage >= 0 && totalPages > 0 && pagesView > 0,
-            "Fatal Error: Make sure the currentPage field is greater than or equal to zero, and the totalPages and pagesView fields are greater than zero. "),
+  })  : assert(currentPage > 0 && totalPages > 0 && pagesView > 0,
+            "Fatal Error: Make sure the currentPage, totalPages and pagesView fields are greater than zero. "),
         super(key: key);
 
   /// How many page numbers selectable to show at once.
@@ -27,7 +27,7 @@ class Pagination extends StatefulWidget {
   /// The callback that is called when the page is changed.
   final Function(int) onPageChanged;
 
-  /// Current page. Default is 0.
+  /// Current page. Default is 1.
   int currentPage;
 
   // Button color of the selected page number.
@@ -62,7 +62,7 @@ class _PaginationState extends State<Pagination> {
           tooltip: "First Page",
           onPressed: () {
             setState(() {
-              widget.currentPage = 0;
+              widget.currentPage = 1;
               widget.onPageChanged(widget.currentPage);
             });
           },
@@ -77,7 +77,7 @@ class _PaginationState extends State<Pagination> {
           onPressed: () {
             setState(() {
               widget.currentPage =
-                  widget.currentPage > 0 ? widget.currentPage - 1 : 0;
+                  widget.currentPage > 1 ? widget.currentPage - 1 : 1;
               widget.onPageChanged(widget.currentPage);
             });
           },
@@ -104,7 +104,7 @@ class _PaginationState extends State<Pagination> {
                         ? widget.numberButtonSelectedColor
                         : null),
                 child: Text(
-                  "${i + 1}",
+                  "$i",
                   style: TextStyle(
                     color: widget.currentPage == i
                         ? widget.numberTextSelectedColor
@@ -118,9 +118,9 @@ class _PaginationState extends State<Pagination> {
           tooltip: "Next Page",
           onPressed: () {
             setState(() {
-              widget.currentPage = widget.currentPage < widget.totalPages - 1
+              widget.currentPage = widget.currentPage < widget.totalPages
                   ? widget.currentPage + 1
-                  : widget.totalPages - 1;
+                  : widget.totalPages;
               widget.onPageChanged(widget.currentPage);
             });
           },
@@ -134,7 +134,7 @@ class _PaginationState extends State<Pagination> {
           tooltip: "Last Page",
           onPressed: () {
             setState(() {
-              widget.currentPage = widget.totalPages - 1;
+              widget.currentPage = widget.totalPages;
               widget.onPageChanged(widget.currentPage);
             });
           },
@@ -151,13 +151,13 @@ class _PaginationState extends State<Pagination> {
   /// Get last page to show in pagination.
   int getPageEnd() {
     return widget.currentPage + widget.pagesView > widget.totalPages
-        ? widget.totalPages
+        ? widget.totalPages + 1
         : widget.currentPage + widget.pagesView;
   }
 
   /// Get first page to show in pagination.
   int getPageStart(int pageEnd) {
-    return pageEnd == widget.totalPages
+    return pageEnd == widget.totalPages + 1
         ? pageEnd - widget.pagesView
         : widget.currentPage;
   }
