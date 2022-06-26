@@ -1,7 +1,7 @@
-name: pager
-description: A flutter widget build a pager.
-version: 0.0.1
-homepage: 
+name: pagination
+description: A widget that allows you to build a numerical pagination useful, for example, if you want to build a custom paginated table.
+version: 0.0.2
+homepage: https://github.com/alessioliotta95/pager
 
 environment:
   sdk: ">=2.17.0 <3.0.0"
