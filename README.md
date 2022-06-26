@@ -70,7 +70,6 @@ Complete example
   }
 }
 ```
-<p align="center">
-  <img src="https://giphy.com/gifs/r8zXyoxgJVgEQpGYLe">
-</p>
+
+<iframe src="https://giphy.com/embed/r8zXyoxgJVgEQpGYLe" width="248" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/r8zXyoxgJVgEQpGYLe">via GIPHY</a></p>
 

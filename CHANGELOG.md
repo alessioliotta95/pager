@@ -4,4 +4,4 @@
 
 ## 0.0.2
 
-* Readme updated. Examplea added. Package renamed. Customizations added.
+* Readme updated. Example added. Package renamed. Customizations added.
