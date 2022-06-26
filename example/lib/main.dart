@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pagination/pagination.dart';
+import 'package:pager/pager.dart';
 
 void main() {
   runApp(const MyApp());
@@ -59,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
             ),
-            Pagination(
+            Pager(
                 currentPage: _currentPage,
                 totalPages: 5,
                 onPageChanged: (page) {

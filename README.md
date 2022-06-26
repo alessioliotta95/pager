@@ -19,13 +19,13 @@ There is a example project in the `example` folder. Check it out. Otherwise, kee
 Need to include the import the package to the dart file where it will be used, use the below command,
 
 ```dart
-import 'package:pagination/pagination.dart';
+import 'package:pager/pager.dart';
 ```
 **Pagination**
 
 Basic Widget
 ```dart
-new Pagination(
+new Pager(
                 pagesView: 3,
                 totalPages: 5,
                 onPageChanged: (page) {},
@@ -55,7 +55,7 @@ Complete example
                 ),
               ),
             ),
-            Pagination(
+            Pager(
                 currentPage: _currentPage,
                 totalPages: 5,
                 onPageChanged: (page) {

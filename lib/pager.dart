@@ -1,10 +1,10 @@
-library pagination;
+library pager;
 
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
-class Pagination extends StatefulWidget {
-  Pagination({
+class Pager extends StatefulWidget {
+  Pager({
     Key? key,
     required this.totalPages,
     required this.onPageChanged,
@@ -43,10 +43,10 @@ class Pagination extends StatefulWidget {
   final Color pageChangeIconColor;
 
   @override
-  State<Pagination> createState() => _PaginationState();
+  State<Pager> createState() => _PagerState();
 }
 
-class _PaginationState extends State<Pagination> {
+class _PagerState extends State<Pager> {
   @override
   void initState() {
     super.initState();

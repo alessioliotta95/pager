@@ -1,4 +1,4 @@
-name: pagination_example
+name: pager_example
 description: A new Flutter project.
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -12,7 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
   
-  pagination:
+  pager:
     path: ../
 
   cupertino_icons: ^1.0.2
