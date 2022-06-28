@@ -19,7 +19,7 @@ class Pager extends StatefulWidget {
         super(key: key);
 
   /// How many page numbers selectable to show at once.
-  final int pagesView;
+  int pagesView;
 
   /// Total pages.
   final int totalPages;
@@ -48,12 +48,8 @@ class Pager extends StatefulWidget {
 
 class _PagerState extends State<Pager> {
   @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
+    pagesViewValidation();
     return Row(
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -160,5 +156,12 @@ class _PagerState extends State<Pager> {
     return pageEnd == widget.totalPages + 1
         ? pageEnd - widget.pagesView
         : widget.currentPage;
+  }
+
+  /// Validation of pagesView field
+  void pagesViewValidation() {
+    if (widget.totalPages < widget.pagesView) {
+      widget.pagesView = widget.totalPages;
+    }
   }
 }

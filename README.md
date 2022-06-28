@@ -2,12 +2,16 @@
 
 Numeric pagination suitable for multiple cases, such as, custom paged table.
 
+<p align="center">
+  <img src="https://media.giphy.com/media/r8zXyoxgJVgEQpGYLe/giphy.gif">
+</p>
+
 ## Getting started
 
-You should ensure that you add the router as a dependency in your flutter project.
+You should ensure that you add the pager as a dependency in your flutter project.
 ```yaml
 dependencies:
- pager: ^0.0.2
+ pager: ^0.0.3
 ```
 
 ## Example Project
@@ -21,15 +25,15 @@ Need to include the import the package to the dart file where it will be used, u
 ```dart
 import 'package:pager/pager.dart';
 ```
-**Pagination**
+**Pager**
 
 Basic Widget
 ```dart
 new Pager(
-                pagesView: 3,
-                totalPages: 5,
-                onPageChanged: (page) {},
-              ),
+            currentPage: _currentPage,
+            totalPages: 5,
+            onPageChanged: (page) {},
+          ),
 ```
 
 Complete example
@@ -56,13 +60,14 @@ Complete example
               ),
             ),
             Pager(
-                currentPage: _currentPage,
-                totalPages: 5,
-                onPageChanged: (page) {
-                  setState(() {
-                    _currentPage = page;
-                  });
-                })
+              currentPage: _currentPage,
+              totalPages: 5,
+              onPageChanged: (page) {
+                setState(() {
+                  _currentPage = page;
+                });
+              },
+            ),
           ],
         ),
       ),
@@ -70,8 +75,6 @@ Complete example
   }
 }
 ```
-<p align="center">
-  <img src="https://media.giphy.com/media/r8zXyoxgJVgEQpGYLe/giphy.gif">
-</p>
+
 
 

@@ -1,6 +1,6 @@
 name: pager
 description: A widget that allows you to build a numerical pagination useful, for example, if you want to build a custom paged table.
-version: 0.0.2
+version: 0.0.3
 homepage: https://github.com/alessioliotta95/pager
 
 environment:
