@@ -60,13 +60,14 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             Pager(
-                currentPage: _currentPage,
-                totalPages: 5,
-                onPageChanged: (page) {
-                  setState(() {
-                    _currentPage = page;
-                  });
-                })
+              currentPage: _currentPage,
+              totalPages: 5,
+              onPageChanged: (page) {
+                setState(() {
+                  _currentPage = page;
+                });
+              },
+            ),
           ],
         ),
       ),
