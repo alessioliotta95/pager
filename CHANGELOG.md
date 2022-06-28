@@ -5,3 +5,7 @@
 ## 0.0.2
 
 * Readme updated. Example added. Package renamed. Customizations added.
+
+## 0.0.2
+
+* Fix pagesView behavior
