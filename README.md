@@ -6,8 +6,8 @@ Numeric pagination suitable for multiple cases, such as, custom paged table.
   <img src="https://media.giphy.com/media/r8zXyoxgJVgEQpGYLe/giphy.gif">
   
 </p>
-<p>
-  <img srsc= "https://media3.giphy.com/media/jCE3XUgsvzhyq31tQJ/giphy.gif">
+<p align="center">
+  <img src= "https://media3.giphy.com/media/jCE3XUgsvzhyq31tQJ/giphy.gif">
 </p>
 
 ## Getting started
@@ -15,7 +15,7 @@ Numeric pagination suitable for multiple cases, such as, custom paged table.
 You should ensure that you add the pager as a dependency in your flutter project.
 ```yaml
 dependencies:
- pager: ^0.0.3
+ pager: ^0.0.4
 ```
 
 ## Example Project
