@@ -182,6 +182,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 const SizedBox(height: 32),
                 Pager(
+                  currentItemsPerPage: _itemsPerPage,
                   currentPage: _currentPage,
                   totalPages: _totalPages,
                   onPageChanged: (page) {
@@ -193,7 +194,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   onItemsPerPageChanged: (itemsPerPage) {
                     setState(() {
                       _itemsPerPage = itemsPerPage;
-                      _totalPages = (_totalElements / _itemsPerPage) as int;
+                      _totalPages = (_totalElements / _itemsPerPage).ceil();
                       _currentPage = 1;
                     });
                   },

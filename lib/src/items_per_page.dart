@@ -3,12 +3,14 @@ import 'package:flutter/material.dart';
 class ItemsPerPage extends StatefulWidget {
   const ItemsPerPage({
     Key? key,
+    required this.currentItemsPerPage,
     required this.itemsPerPage,
     required this.onChanged,
     this.itemsPerPageText,
     this.itemsPerPageTextStyle,
     this.dropDownMenuItemTextStyle,
   }) : super(key: key);
+  final int currentItemsPerPage;
   final List<int> itemsPerPage;
   final Function(int) onChanged;
   final String? itemsPerPageText;
@@ -19,14 +21,6 @@ class ItemsPerPage extends StatefulWidget {
 }
 
 class _ItemsPerPageState extends State<ItemsPerPage> {
-  late int _currentValue;
-
-  @override
-  void initState() {
-    super.initState();
-    _currentValue = widget.itemsPerPage.first;
-  }
-
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -41,7 +35,7 @@ class _ItemsPerPageState extends State<ItemsPerPage> {
         ),
         const SizedBox(width: 16),
         DropdownButton(
-          value: _currentValue,
+          value: widget.currentItemsPerPage,
           focusColor: Colors.transparent,
           items: widget.itemsPerPage.map((value) {
             return DropdownMenuItem<int>(
@@ -57,8 +51,7 @@ class _ItemsPerPageState extends State<ItemsPerPage> {
           }).toList(),
           onChanged: (value) {
             setState(() {
-              _currentValue = value as int;
-              widget.onChanged(value);
+              widget.onChanged(value as int);
             });
           },
         ),

@@ -8,6 +8,7 @@ class Pager extends StatefulWidget {
     required this.totalPages,
     required this.onPageChanged,
     this.showItemsPerPage = false,
+    this.currentItemsPerPage,
     this.onItemsPerPageChanged,
     this.itemsPerPageList,
     this.pagesView = 3,
@@ -24,7 +25,8 @@ class Pager extends StatefulWidget {
         super(key: key) {
     if (showItemsPerPage) {
       assert(
-          onItemsPerPageChanged != null &&
+          currentItemsPerPage != null &&
+              onItemsPerPageChanged != null &&
               itemsPerPageList != null &&
               itemsPerPageList!.isNotEmpty,
           "Fatal error: OnItemsPerPageChanged must be implemented or itemsPerPageList is null or empty.");
@@ -42,6 +44,9 @@ class Pager extends StatefulWidget {
 
   /// Show items per page
   bool showItemsPerPage;
+
+  /// Current items per page.
+  final int? currentItemsPerPage;
 
   /// Items per page list. Example: [5,10,20,50]
   List<int>? itemsPerPageList;
@@ -129,7 +134,7 @@ class _PagerState extends State<Pager> {
                     },
                     style: ElevatedButton.styleFrom(
                         shape: const CircleBorder(),
-                        primary: widget.currentPage == i
+                        backgroundColor: widget.currentPage == i
                             ? widget.numberButtonSelectedColor
                             : null),
                     child: Text(
@@ -177,6 +182,7 @@ class _PagerState extends State<Pager> {
         ),
         if (widget.showItemsPerPage)
           ItemsPerPage(
+            currentItemsPerPage: widget.currentItemsPerPage!,
             itemsPerPage: widget.itemsPerPageList!,
             onChanged: widget.onItemsPerPageChanged!,
             itemsPerPageText: widget.itemsPerPageText,

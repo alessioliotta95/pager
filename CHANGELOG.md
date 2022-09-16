@@ -13,3 +13,7 @@
 ## 0.0.4
 
 * ItemsPerPage Component added.
+
+## 0.0.5
+
+* Current ItemsPerPage fixed.
