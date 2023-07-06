@@ -17,3 +17,7 @@
 ## 0.0.5
 
 * Current ItemsPerPage fixed.
+
+## 0.0.6
+
+* Fix: Arrow buttons disable.

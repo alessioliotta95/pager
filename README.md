@@ -15,7 +15,7 @@ Numeric pagination suitable for multiple cases, such as, custom paged table.
 You should ensure that you add the pager as a dependency in your flutter project.
 ```yaml
 dependencies:
- pager: ^0.0.4
+ pager: ^0.0.6
 ```
 
 ## Example Project
