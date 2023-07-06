@@ -94,12 +94,14 @@ class _PagerState extends State<Pager> {
           children: [
             IconButton(
               tooltip: "First Page",
-              onPressed: () {
-                setState(() {
-                  widget.currentPage = 1;
-                  widget.onPageChanged(widget.currentPage);
-                });
-              },
+              onPressed: widget.currentPage > 1
+                  ? () {
+                      setState(() {
+                        widget.currentPage = 1;
+                        widget.onPageChanged(widget.currentPage);
+                      });
+                    }
+                  : null,
               splashRadius: 25,
               icon: Icon(
                 Icons.first_page,
@@ -108,13 +110,15 @@ class _PagerState extends State<Pager> {
             ),
             IconButton(
               tooltip: "Previous",
-              onPressed: () {
-                setState(() {
-                  widget.currentPage =
-                      widget.currentPage > 1 ? widget.currentPage - 1 : 1;
-                  widget.onPageChanged(widget.currentPage);
-                });
-              },
+              onPressed: widget.currentPage > 1
+                  ? () {
+                      setState(() {
+                        widget.currentPage =
+                            widget.currentPage > 1 ? widget.currentPage - 1 : 1;
+                        widget.onPageChanged(widget.currentPage);
+                      });
+                    }
+                  : null,
               splashRadius: 25,
               icon: Icon(
                 Icons.chevron_left,
@@ -150,14 +154,17 @@ class _PagerState extends State<Pager> {
             ),
             IconButton(
               tooltip: "Next Page",
-              onPressed: () {
-                setState(() {
-                  widget.currentPage = widget.currentPage < widget.totalPages
-                      ? widget.currentPage + 1
-                      : widget.totalPages;
-                  widget.onPageChanged(widget.currentPage);
-                });
-              },
+              onPressed: widget.currentPage < widget.totalPages
+                  ? () {
+                      setState(() {
+                        widget.currentPage =
+                            widget.currentPage < widget.totalPages
+                                ? widget.currentPage + 1
+                                : widget.totalPages;
+                        widget.onPageChanged(widget.currentPage);
+                      });
+                    }
+                  : null,
               splashRadius: 25,
               icon: Icon(
                 Icons.chevron_right,
@@ -166,12 +173,14 @@ class _PagerState extends State<Pager> {
             ),
             IconButton(
               tooltip: "Last Page",
-              onPressed: () {
-                setState(() {
-                  widget.currentPage = widget.totalPages;
-                  widget.onPageChanged(widget.currentPage);
-                });
-              },
+              onPressed: widget.currentPage < widget.totalPages
+                  ? () {
+                      setState(() {
+                        widget.currentPage = widget.totalPages;
+                        widget.onPageChanged(widget.currentPage);
+                      });
+                    }
+                  : null,
               splashRadius: 25,
               icon: Icon(
                 Icons.last_page,
