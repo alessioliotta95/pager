@@ -21,3 +21,4 @@
 ## 0.0.6
 
 * Fix: Arrow buttons disable.
+* Dart SDK constraint changed to ">=2.17.0 <4.0.0"
